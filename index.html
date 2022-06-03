@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-
+    <script src="https://unpkg.com/imask"></script>
     <title>Border Radius Previewer</title>
 </head>
 
@@ -16,30 +16,33 @@
         <div class="subtitle-content">
             <p>Preview how the shape will look when changing the border-radius</p>
         </div>
-
         <div class="inputs-container">
-            <div class="input-content">
+            <div class="input-content top-left">
                 <label for="top-left-input">top-left</label>
-                <input type="text" name="top-left-input" id="top-left-input">
+                <input type="text" name="top-left-input" class="input-number" id="top-left-input" onchange="changeBorderRadius('top-left')" value="0">
             </div>
 
-            <div class="input-content">
-                <label for="top-right-input">
-                    top-right
-                </label>
-                <input type="text" name="top-right-input" id="top-right-input">
+            <div class="input-content top-right">
+                <label for="top-right-input">top-right</label>
+                <input type="text" name="top-right-input" class="input-number" id="top-right-input" onchange="changeBorderRadius('top-right')" value="0">
             </div>
 
-            <div class="input-content">
+            <div class="input-content bottom-left">
                 <label for="bottom-left-input">bottom-left</label>
-                <input type="text" name="bottom-left-input" id="bottom-left-input">
+                <input type="text" name="bottom-left-input" class="input-number" id="bottom-left-input" onchange="changeBorderRadius('bottom-left')" value="0">
             </div>
 
-            <div class="input-content">
+            <div class="input-content bottom-right">
                 <label for="bottom-right-input">bottom-right</label>
-                <input type="text" name="bottom-right-input" id="bottom-right-input">
-
+                <input type="text" name="bottom-right-input" class="input-number" id="bottom-right-input" onchange="changeBorderRadius('bottom-right')" value="0">
             </div>
+        </div>
+        <div class="alert" style="display: none;" id="alert">
+            <p></p>
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        </div>
+        <div class="element-ref" id="element-ref" onclick="copyText()">
+            <p> <b>border-radius:</b> <span>0px 0px 0px 0px </span></p>
         </div>
     </div>
     <script src="script.js "></script>
